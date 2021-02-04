@@ -1,0 +1,175 @@
+<!doctype html><html><head><meta charset=utf-8>
+
+<title>Susanna Tsai - About</title>
+<link rel=canonical href="https://susannatsai.com/about.html">
+<link rel=icon href=favicon.ico>
+<link rel=apple-touch-icon sizes=180x180 href=favicon180.jpg>
+<link rel=icon sizes=192x192 href=favicon192.jpg>
+
+<meta name=description content="Susanna Tsai: Strategic talent, learning, and performance development--strategy, research, design, and technology.">
+
+<meta name=viewport content="width=device-width,initial-scale=1">
+
+<style>
+* { margin:0; padding:0; }
+html, body { width:100%; height:100%; }
+html { background:#fff; color:#5c5c5c; color:#777; }
+body { font:95% Verdana, "DejaVu Sans", sans-serif; }
+
+body >* { padding:1rem 2.8rem; }
+body >* >* { max-width:42rem; margin:0 auto; }
+@media (max-width:500px) {
+  body >* { padding:1rem; }
+}
+
+a { color:#0090ca; text-decoration:none; }
+a:hover { color:#c30; }
+nav a { margin-right:2rem; }
+nav a:last-child { margin:0; }
+
+/* header */
+header {
+  margin-bottom:1em; background:#fafafa; box-shadow:0 0 .5em #777;
+}
+h1 { font:2.1rem serif; font-weight:normal; padding-bottom:1rem; color:#5a5c5e; }
+
+/* main sections */
+main { padding-bottom:3em; }
+b, .author { color:#5e5c5a; }
+h2, h3, h4 { color:#4a4c4e; }
+h2 { font-size:2.5rem; font-weight:normal; padding:.8rem 0 0; }
+h5 { /* subtitles */
+  font-size:1.2rem; font-weight:normal; color:#666; padding-top:1rem; }
+
+h3 { font-size:1.5rem; font-weight:normal; padding-top:1.5em; }
+h4 { font-size:1em; font-weight:bold; padding:2em 0 0; }
+p { padding-top:1.5em; line-height:1.8; }
+ul { padding-top:1.2em; }
+ul li { margin-left:1em; padding:0 .8em .8em; line-height:1.8; }
+.notes {
+  margin-top:2rem; padding-top:1.5rem; border-top:1px solid #ccc;
+  font-style:italic;
+}.author { font-weight: bold; }
+
+.notes + .notes { margin-top:.5rem; border:0; }
+img { display:inline-block; width:21rem; max-width:80%; height:auto; }
+
+/* footer */
+footer {
+  font-size:.95em; border-top:1px solid #ccc;
+  margin:2rem 0 0; padding-top:2.5rem; padding-bottom:4rem;
+  position:relative; bottom:0;
+}
+footer { color:#999; }
+</style>
+
+</head><body>
+
+<!-- HEADER \ / \ | / \ / \ | / \ / \ | / \ / \ | / \ /
+-->
+<header><nav>
+<h1>Susanna Tsai</h1>
+<div>
+  <a href=about.html>About</a>
+  <a href=writing.html>Writing</a>
+  <a href=consulting.html>Consulting</a>
+</div>
+</nav></header>
+
+<!-- MAIN CONTENT \ / \ | / \ / \ | / \ / \ | / \ / \ | / \ /
+-->
+<main>
+<div><img src=susanna.jpg width=430 height=408 alt="Susanna Tsai"></div><h2>About</h2><p><b>Susanna Tsai</b> has been a pioneer in novel approaches to learning and performance improvement.
+</p><p>Starting in the early 90s, Susanna promoted the use of internet technologies for education and training. She launched one of the earliest web-based online learning platforms in the mid-90s, at the onset of the web rise in popularity. 
+</p><p>Susanna is an expert in building novel learning and pedagogical models. For the U.S. Air Force Academy (<a href="https://www.usafa.af.mil/">USAFA</a>), she invented the OEC curriculum model. Since the late 90s, she was involved in research of games for learning, including for the Defense Advanced Research Projects Agency (<a href="https://www.darpa.mil/">DARPA</a>). At the University of Hawaii (<a href=http://www.hawaii.edu>UH</a>) and <a href="https://chaminade.edu/">Chaminade University</a>, she investigated alternative flipped-classroom models, and for Indiana University Bloomington (<a href=http://www.iub.edu>IU</a>), Susanna devised models for group learning and affective learning. 
+</p><p>Since the 80s, Susanna has been engaged in the development of learning and performance processes. She was involved in the Instructional Systems Life Cycle (ISLC) process of EDS (<a href=https://hp.com>HP</a>), Method-E of Arthur Andersen (<a href=https://www.accenture.com>Accenture</a>), and the performance support development process of Federal agencies. She is currently working on a novel agile process for ADDIE.
+</p><p>Susanna has served as Chief Learning Scientist and Officer at <a href=https://inkitiki.com>InkiTiki</a>, CEO and Principal Learning Scientist at Planet Smart, President of the founding Chapter of the International Society for Performance Improvement (<a href="http://www.ispi.org/">ISPI</a>), and Associate Director of the Office of Research for the University of Hawaii System (<a href=http://www.hawaii.edu>UH</a>) with oversight over 10 campuses.
+</p><p>Susanna holds a Ph.D. in Instructional Systems Technology and an M.A. in Linguistics, both from Indiana University Bloomington (<a href=http://www.iub.edu>IU</a>), and a B.A. in English and Foreign Languages from <a href="http://www.pu.edu.tw/">Providence University</a>.
+</p><p>She is a native-level speaker of English, Chinese, and Taiwanese, and knowledgeable in Japanese and Spanish.
+</p>
+</main>
+
+<!-- FOOTER \ / \ | / \ / \ | / \ / \ | / \ / \ | / \ /
+-->
+<footer>
+<nav>
+  <a href=about.html>About</a>
+  <a href=writing.html>Writing</a>
+  <a href=consulting.html>Consulting</a>
+</nav>
+<p>&copy; 2018-19 Susanna Tsai. All rights reserved.</p>
+</footer>
+
+
+<!-- SCRIPTS \ / \ | / \ / \ | / \ / \ | / \ / \ | / \ /
+-->
+
+<script>
+// api-monitor.js
+// user platform and browser data 
+
+(function (nav) {
+  var post = function (url, data) {
+    if (nav.sendBeacon) return nav.sendBeacon(url, data)
+    var xhr = new XMLHttpRequest()
+    xhr.open('POST', url) // async may lose data but is better for users
+    if (typeof data == 'string')
+      xhr.setRequestHeader('Content-Type', 'text/plain; charset=utf-8')
+    xhr.send(data)
+  }
+  var ua = function (rx, alt) { // match a user-agent setting
+    return (nav.userAgent.match(rx) || [alt])[0]
+  }
+
+  var bot = ua(/[-_\w]*(bot|spider|crawler)\b|HeadlessChrome|\+https?:\/\/[-_\w.]*/i)
+      || nav.webdriver && 'HeadlessChrome'
+    , gameconsole = ua(/(Nintendo|Xbox|Playstation)[-_\s\w]*/i)
+    , tv = ua(/\b(Smart-?TV|Tizen|AppleTV|Roku|NEO-|crKey|NEO-|AFTS)[-_\s\w]*/i)
+    , mobile = ua(/\b(Kindle|iPhone|RM-|Lumia|Samsung|SM-|Nexus|HTC|Pixel|LG-|Blackberry)[-_\s\w]*/i)
+    , device = ! bot && (gameconsole || tv && 'TV'
+        || ua(/Mobil?e?|Tablet/i, mobile || 'Computer'))
+    , os = ! bot && ! gameconsole
+       && ua(/(Android|iPhone|CrOS|Windows|\w+;? ?Linux|Mac ?OS|AppleTV)[^;)/]*/i)
+    , hw = ! bot && (gameconsole || tv || mobile
+      || ua(/(Macintosh)[-_\s\w]*/i))
+
+  post('https://api.inkitiki.com/post/'
+      + (location.hostname || 'localhost'), [
+    // event
+    [ 'URL', location.toString() ],
+    [ 'User-time', Date().toString() ],
+    [ 'Referrer', document.referrer ],
+    [ 'History', history.length ],
+
+    // platform
+    [ 'Bot', bot ],
+    [ 'Device', device ],
+    [ 'OS', os ],
+    [ 'Hardware', (hw? hw + ', ': '')
+        + nav.platform + ', ' + nav.hardwareConcurrency + ' cores' ],
+    [ 'Screen', screen.width + 'x' + screen.height
+      + ', ' + screen.orientation.type ],
+
+    // browser
+    [ 'Browser',
+      (ua(/(?:OPR|Opera|MSIE|Chrome|Safari|Firefox).\d+\.\d+/)
+        || ua(/(?:Opera|Safari).*?Version.\d+\.\d+/)
+        || ua(/\w+\/\d+\.\d+$/, '')
+      ).replace('OPR', 'Opera').replace(/^(\w+).*(\d+\.\d+)$/, '$1 $2') ],
+    [ 'Engine',
+      ua(/Gecko|AppleWebKit|Presto|Edge|Trident|Blink|KHTML|Tasman/)],
+    
+    // preferences
+    [ 'Viewport', innerWidth + 'x' + innerHeight ],
+    [ 'Languages', nav.languages.join(', ') ]
+
+  ].map(function (pair) {
+    return pair[1] &&
+      pair[0] + '=' + String(pair[1]).replace(/&/g, ' | ') })
+  .filter(Boolean)
+  .join('&'))
+})(navigator)
+</script>
+
+
+

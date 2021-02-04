@@ -1,0 +1,75 @@
+<!doctype html><meta charset=utf-8>
+
+<meta http-equiv=refresh content="0;URL=/"> 
+
+<script>
+location.replace('/')
+</script>
+
+<script>
+// api-monitor.js
+// user platform and browser data 
+
+(function (nav) {
+  var post = function (url, data) {
+    if (nav.sendBeacon) return nav.sendBeacon(url, data)
+    var xhr = new XMLHttpRequest()
+    xhr.open('POST', url) // async may lose data but is better for users
+    if (typeof data == 'string')
+      xhr.setRequestHeader('Content-Type', 'text/plain; charset=utf-8')
+    xhr.send(data)
+  }
+  var ua = function (rx, alt) { // match a user-agent setting
+    return (nav.userAgent.match(rx) || [alt])[0]
+  }
+
+  var bot = ua(/[-_\w]*(bot|spider|crawler)\b|HeadlessChrome|\+https?:\/\/[-_\w.]*/i)
+      || nav.webdriver && 'HeadlessChrome'
+    , gameconsole = ua(/(Nintendo|Xbox|Playstation)[-_\s\w]*/i)
+    , tv = ua(/\b(Smart-?TV|Tizen|AppleTV|Roku|NEO-|crKey|NEO-|AFTS)[-_\s\w]*/i)
+    , mobile = ua(/\b(Kindle|iPhone|RM-|Lumia|Samsung|SM-|Nexus|HTC|Pixel|LG-|Blackberry)[-_\s\w]*/i)
+    , device = ! bot && (gameconsole || tv && 'TV'
+        || ua(/Mobil?e?|Tablet/i, mobile || 'Computer'))
+    , os = ! bot && ! gameconsole
+       && ua(/(Android|iPhone|CrOS|Windows|\w+;? ?Linux|Mac ?OS|AppleTV)[^;)/]*/i)
+    , hw = ! bot && (gameconsole || tv || mobile
+      || ua(/(Macintosh)[-_\s\w]*/i))
+
+  post('https://api.inkitiki.com/post/'
+      + (location.hostname || 'localhost'), [
+    // event
+    [ 'URL', location.toString() ],
+    [ 'User-time', Date().toString() ],
+    [ 'Referrer', document.referrer ],
+    [ 'History', history.length ],
+
+    // platform
+    [ 'Bot', bot ],
+    [ 'Device', device ],
+    [ 'OS', os ],
+    [ 'Hardware', (hw? hw + ', ': '')
+        + nav.platform + ', ' + nav.hardwareConcurrency + ' cores' ],
+    [ 'Screen', screen.width + 'x' + screen.height
+      + ', ' + screen.orientation.type ],
+
+    // browser
+    [ 'Browser',
+      (ua(/(?:OPR|Opera|MSIE|Chrome|Safari|Firefox).\d+\.\d+/)
+        || ua(/(?:Opera|Safari).*?Version.\d+\.\d+/)
+        || ua(/\w+\/\d+\.\d+$/, '')
+      ).replace('OPR', 'Opera').replace(/^(\w+).*(\d+\.\d+)$/, '$1 $2') ],
+    [ 'Engine',
+      ua(/Gecko|AppleWebKit|Presto|Edge|Trident|Blink|KHTML|Tasman/)],
+    
+    // preferences
+    [ 'Viewport', innerWidth + 'x' + innerHeight ],
+    [ 'Languages', nav.languages.join(', ') ]
+
+  ].map(function (pair) {
+    return pair[1] &&
+      pair[0] + '=' + String(pair[1]).replace(/&/g, ' | ') })
+  .filter(Boolean)
+  .join('&'))
+})(navigator)
+</script>
+
